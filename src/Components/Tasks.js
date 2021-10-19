@@ -9,6 +9,14 @@ function Tasks({ tasks, completeTask }) {
     value: "",
   });
 
+  const deleteTasks = () => {
+    console.log("task delete");
+  };
+
+  const updateEdit = () => {
+    console.log("task edited");
+  };
+
   return tasks.map((task, index) => (
     <div
       className={task.isComplete ? "task__complete" : "task__row"}
@@ -19,8 +27,8 @@ function Tasks({ tasks, completeTask }) {
       </div>
 
       <div className="icons">
-        <AiFillCloseCircle />
-        <FiEdit2 />
+        <AiFillCloseCircle onClick={deleteTasks} />
+        <FiEdit2 onClick={updateEdit} />
       </div>
     </div>
   ));
