@@ -1,17 +1,18 @@
 import { useState } from "react";
 
+// Import React icons
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FiEdit2 } from "react-icons/fi";
 
-function Tasks({ tasks, completeTask }) {
+function Tasks({ tasks, completeTask, deleteTask }) {
   const [edit, setEdit] = useState({
     id: null,
     value: "",
   });
 
-  const deleteTasks = () => {
-    console.log("task delete");
-  };
+  function deleteTasks() {
+    console.log("clicked and deleted");
+  }
 
   const updateEdit = () => {
     console.log("task edited");
@@ -27,7 +28,7 @@ function Tasks({ tasks, completeTask }) {
       </div>
 
       <div className="icons">
-        <AiFillCloseCircle onClick={deleteTasks} />
+        <AiFillCloseCircle onClick={() => deleteTask(task.id)} />
         <FiEdit2 onClick={updateEdit} />
       </div>
     </div>

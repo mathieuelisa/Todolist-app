@@ -1,4 +1,4 @@
-// import component
+// import components
 import Todolist from "./Components/Todolist";
 
 function App() {

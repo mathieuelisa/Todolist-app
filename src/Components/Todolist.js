@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 // Import components
 import TodoForm from "./Todoform";
 import Tasks from "./Tasks";
@@ -17,6 +18,12 @@ function Todolist() {
     console.log(task, ...tasks);
   };
 
+  const deleteTask = (id) => {
+    const removeTaskToTheArray = [...tasks].filter((task) => task.id !== id);
+
+    setTasks(removeTaskToTheArray);
+  };
+
   const completeTask = (id) => {
     let updatedTasks = tasks.map((task) => {
       if (task.id === id) {
@@ -31,7 +38,11 @@ function Todolist() {
     <div>
       <h1>Welcome to my new todolist app</h1>
       <TodoForm onSubmit={addTask} />
-      <Tasks tasks={tasks} completeTask={completeTask} />
+      <Tasks
+        tasks={tasks}
+        completeTask={completeTask}
+        deleteTask={deleteTask}
+      />
     </div>
   );
 }
