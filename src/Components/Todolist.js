@@ -17,7 +17,19 @@ function Todolist() {
 
     console.log(task, ...tasks);
   };
+  //Update task
 
+  const updateTask = (taskId, newValue) => {
+    if (!newValue.text) {
+      return;
+    }
+
+    setTasks((prev) =>
+      prev.map((element) => (element.id === taskId ? newValue : element))
+    );
+  };
+
+  // Remove task
   const deleteTask = (id) => {
     const removeTaskToTheArray = [...tasks].filter((task) => task.id !== id);
 
@@ -42,6 +54,7 @@ function Todolist() {
         tasks={tasks}
         completeTask={completeTask}
         deleteTask={deleteTask}
+        updateTask={updateTask}
       />
     </div>
   );
