@@ -1,6 +1,7 @@
 import { useState } from "react";
 // Import components
 import TodoForm from "./Todoform";
+import Tasks from "./Tasks";
 
 function Todolist() {
   const [tasks, setTasks] = useState([]);
@@ -16,10 +17,21 @@ function Todolist() {
     console.log(task, ...tasks);
   };
 
+  const completeTask = (id) => {
+    let updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        task.isComplete = !task.isComplete;
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+  };
+
   return (
     <div>
       <h1>Welcome to my new todolist app</h1>
       <TodoForm onSubmit={addTask} />
+      <Tasks tasks={tasks} completeTask={completeTask} />
     </div>
   );
 }
