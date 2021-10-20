@@ -33,7 +33,7 @@ function Tasks({ tasks, completeTask, deleteTask, updateTask }) {
 
   return tasks.map((task, index) => (
     <div
-      className={task.isComplete ? "task__complete" : "task__row"}
+      className={task.isComplete ? "task__row complete" : "task__row"}
       key={index}
     >
       <div key={task.id} onClick={() => completeTask(task.id)}>

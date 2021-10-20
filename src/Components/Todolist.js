@@ -48,7 +48,7 @@ function Todolist() {
 
   return (
     <div>
-      <h1>Welcome to my new todolist app</h1>
+      <h1 className="todo__mainTitle">Welcome to my new todolist app</h1>
       <TodoForm onSubmit={addTask} />
       <Tasks
         tasks={tasks}

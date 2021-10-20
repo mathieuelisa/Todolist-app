@@ -1,0 +1,36 @@
+.App {
+  height: 100vh;
+  background-color: #003049;
+  display: flex;
+  justify-content: center;
+}
+
+.todo {
+  &__form {
+    width: 496px;
+    display: flex;
+    justify-content: center;
+
+    &-input {
+      height: 40px;
+      width: 60%;
+      background-color: transparent;
+      border: 1px solid whitesmoke;
+      padding: 7px;
+      color: whitesmoke;
+
+      &::placeholder {
+        color: grey;
+      }
+    }
+  }
+
+  &__mainTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    color: whitesmoke;
+  }
+}
