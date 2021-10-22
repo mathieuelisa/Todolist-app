@@ -4,6 +4,8 @@ import { useState } from "react";
 import TodoForm from "./Todoform";
 import Tasks from "./Tasks";
 
+import "../Assets/Fonts/Richardson.otf";
+
 function Todolist() {
   const [tasks, setTasks] = useState([]);
 
