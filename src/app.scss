@@ -51,14 +51,24 @@
   }
 }
 
-.task__row {
-  display: flex;
-  justify-content: space-between;
-  width: 408px;
-  margin-top: 30px;
-  color: whitesmoke;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 30px auto;
+.task {
+  &__text {
+    cursor: pointer;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    width: 408px;
+    margin-top: 30px;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 30px auto;
+
+    &.complete {
+      text-decoration: line-through;
+    }
+  }
 }
 
 .icons {

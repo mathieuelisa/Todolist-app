@@ -17,8 +17,8 @@ function Todolist() {
 
     console.log(task, ...tasks);
   };
-  //Update task
 
+  //Update task
   const updateTask = (taskId, newValue) => {
     if (!newValue.text) {
       return;

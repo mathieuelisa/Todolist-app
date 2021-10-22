@@ -3,7 +3,12 @@ import { useState } from "react";
 // Import React icons
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FiEdit2 } from "react-icons/fi";
+
+// Import component
 import TodoForm from "./Todoform";
+
+// Import React Reveal Effect
+import Fade from "react-reveal/Fade";
 
 function Tasks({ tasks, completeTask, deleteTask, updateTask }) {
   const [edit, setEdit] = useState({
@@ -32,19 +37,25 @@ function Tasks({ tasks, completeTask, deleteTask, updateTask }) {
   };
 
   return tasks.map((task, index) => (
-    <div
-      className={task.isComplete ? "task__row complete" : "task__row"}
-      key={index}
-    >
-      <div key={task.id} onClick={() => completeTask(task.id)}>
-        {task.text}
-      </div>
+    <Fade>
+      <div
+        className={task.isComplete ? "task__row complete" : "task__row"}
+        key={index}
+      >
+        <div
+          className="task__text"
+          key={task.id}
+          onClick={() => completeTask(task.id)}
+        >
+          {task.text}
+        </div>
 
-      <div className="icons">
-        <AiFillCloseCircle onClick={() => deleteTask(task.id)} />
-        <FiEdit2 onClick={() => setEdit({ id: task.id, value: task.text })} />
+        <div className="icons">
+          <AiFillCloseCircle onClick={() => deleteTask(task.id)} />
+          <FiEdit2 onClick={() => setEdit({ id: task.id, value: task.text })} />
+        </div>
       </div>
-    </div>
+    </Fade>
   ));
 }
 
