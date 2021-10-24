@@ -8,7 +8,10 @@ import Tasks from "./Tasks";
 import "../Assets/Fonts/Richardson.otf";
 
 function Todolist() {
-  const [tasks, setTasks] = useState([]);
+  // const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("myTasks") || "[]")
+  );
 
   useEffect(() => {
     localStorage.setItem("myTasks", JSON.stringify(tasks));
