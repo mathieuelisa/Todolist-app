@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Import components
 import TodoForm from "./Todoform";
 import Tasks from "./Tasks";
 
+// Import font
 import "../Assets/Fonts/Richardson.otf";
 
 function Todolist() {
   const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem("myTasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (task) => {
     if (!task.text) {

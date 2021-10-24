@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FiEdit2 } from "react-icons/fi";
 
-// Import component
+// Import Component
 import TodoForm from "./Todoform";
 
 // Import React Reveal Effect
@@ -27,14 +27,6 @@ function Tasks({ tasks, completeTask, deleteTask, updateTask }) {
   if (edit.id) {
     return <TodoForm edit={edit} onSubmit={submitUpdate} />;
   }
-
-  function deleteTasks() {
-    console.log("clicked and deleted");
-  }
-
-  const updateEdit = () => {
-    console.log("task edited");
-  };
 
   return tasks.map((task, index) => (
     <Fade>

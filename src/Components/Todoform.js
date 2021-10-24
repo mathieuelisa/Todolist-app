@@ -7,6 +7,7 @@ function TodoForm(props) {
 
   useEffect(() => {
     inputRef.current.focus();
+    document.title = "Tasks List | App for your daily tasks ...";
   });
 
   function handleSubmit(e) {
