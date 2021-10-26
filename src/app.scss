@@ -3,6 +3,11 @@
   src: url("./Assets/Fonts/Richardson.otf");
 }
 
+@font-face {
+  font-family: "Champagne";
+  src: url("./Assets/Fonts/Champagne.ttf");
+}
+
 .App {
   display: flex;
   justify-content: center;
@@ -36,6 +41,12 @@
       width: 127px;
       border: 1px solid whitesmoke;
       border-radius: 0px 5px 5px 0;
+      transition: all 0.4s ease-in;
+      font-size: 0.9em;
+
+      &:hover {
+        background-color: lightgray;
+      }
     }
   }
 
@@ -59,6 +70,8 @@
 .task {
   &__text {
     cursor: pointer;
+    font-family: "Champagne";
+    font-size: 1.2em;
   }
 
   &__row {
@@ -81,6 +94,20 @@
   justify-content: space-between;
   width: 43px;
   cursor: pointer;
+
+  &-delete {
+    transition: all 0.4s ease-in;
+    &:hover {
+      color: rgb(191, 102, 102);
+    }
+
+    &-update {
+      transition: all 0.4s ease-in;
+      &:hover {
+        color: lightgray;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1070px) {

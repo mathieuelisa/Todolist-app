@@ -14,7 +14,8 @@ and after that use :
 yarn run
 ```
 
-With this project you can _add_, _delete_ and _update_ tasks.
+With this project you can _add_, _delete_ and _update_ tasks.<br>
+If your task is finished you just have to click on it for the <del>crossed out</del>.
 
 ## Available Scripts
 

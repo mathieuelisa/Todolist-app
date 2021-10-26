@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-
 // Import components
 import TodoForm from "./Todoform";
 import Tasks from "./Tasks";
-
 // Import font
 import "../Assets/Fonts/Richardson.otf";
+import "../Assets/Fonts/Champagne.ttf";
 
 function Todolist() {
-  // const [tasks, setTasks] = useState([]);
   const [tasks, setTasks] = useState(
     JSON.parse(localStorage.getItem("myTasks") || "[]")
   );
@@ -17,6 +15,7 @@ function Todolist() {
     localStorage.setItem("myTasks", JSON.stringify(tasks));
   }, [tasks]);
 
+  // Add task
   const addTask = (task) => {
     if (!task.text) {
       return;
@@ -46,6 +45,7 @@ function Todolist() {
     setTasks(removeTaskToTheArray);
   };
 
+  // Complete task
   const completeTask = (id) => {
     let updatedTasks = tasks.map((task) => {
       if (task.id === id) {

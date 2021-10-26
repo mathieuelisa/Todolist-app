@@ -1,12 +1,9 @@
 import { useState } from "react";
-
 // Import React icons
 import { AiFillCloseCircle } from "react-icons/ai";
 import { FiEdit2 } from "react-icons/fi";
-
 // Import Component
 import TodoForm from "./Todoform";
-
 // Import React Reveal Effect
 import Fade from "react-reveal/Fade";
 
@@ -43,8 +40,14 @@ function Tasks({ tasks, completeTask, deleteTask, updateTask }) {
         </div>
 
         <div className="icons">
-          <AiFillCloseCircle onClick={() => deleteTask(task.id)} />
-          <FiEdit2 onClick={() => setEdit({ id: task.id, value: task.text })} />
+          <AiFillCloseCircle
+            className="icons-delete"
+            onClick={() => deleteTask(task.id)}
+          />
+          <FiEdit2
+            className="icons-update"
+            onClick={() => setEdit({ id: task.id, value: task.text })}
+          />
         </div>
       </div>
     </Fade>
