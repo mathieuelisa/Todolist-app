@@ -7,12 +7,14 @@ import "../Assets/Fonts/Richardson.otf";
 import "../Assets/Fonts/Champagne.ttf";
 
 function Todolist() {
+  const [isReady, setIsReady] = useState(false);
   const [tasks, setTasks] = useState(
     JSON.parse(localStorage.getItem("myTasks") || "[]")
   );
 
   useEffect(() => {
     localStorage.setItem("myTasks", JSON.stringify(tasks));
+    document.fonts.load("12px Richardson").then(() => setIsReady(true));
   }, [tasks]);
 
   // Add task
@@ -58,7 +60,7 @@ function Todolist() {
 
   return (
     <div className="todo__formCustom">
-      <h1 className="todo__mainTitle">Tasks Lists</h1>
+      {isReady && <h1 className="todo__mainTitle">Tasks Lists</h1>}
       <TodoForm onSubmit={addTask} />
       <Tasks
         tasks={tasks}
